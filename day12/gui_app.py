@@ -35,16 +35,27 @@ result = tkt.Variable(app)
 
 tkt.Entry(app, textvariable=f1, font=('Arial',10)).place(x=10,y=110)
 tkt.Entry(app, textvariable=f2, font=('Arial',10)).place(x=10,y=130)
-tkt.Label(app, text='result').place(x=100,y=130)
-tkt.Label(app, textvariable=result, font=('Arial',10)).place(x=200,y=130)
+tkt.Label(app, text='result').place(x=10,y=180)
+tkt.Label(app, textvariable=result, font=('Arial',10)).place(x=50,y=180)
 
 def calc(op):
     print('i will calc')
     result.set(eval(f1.get()+op+f2.get()))
 
-tkt.Button(app, text='+', command=lambda:calc('+') , font=('Arial',10)).place(x=10,y=150)
-tkt.Button(app, text='-', command=lambda:calc('-') , font=('Arial',10)).place(x=30,y=150)
-tkt.Button(app, text='*', command=lambda:calc('*') , font=('Arial',10)).place(x=50,y=150)
-tkt.Button(app, text='/', command=lambda:calc('/') , font=('Arial',10)).place(x=70,y=150)
+tkt.Button(app, text='+', command=lambda:calc('+') , width=10, font=('Arial',10)).place(x=10,y=150)
+tkt.Button(app, text='-', command=lambda:calc('-') , width=10, font=('Arial',10)).place(x=30,y=150)
+tkt.Button(app, text='*', command=lambda:calc('*') , width=10, font=('Arial',10)).place(x=50,y=150)
+tkt.Button(app, text='/', command=lambda:calc('/') , width=10, font=('Arial',10)).place(x=70,y=150)
+
+box = tkt.Listbox(app, height=5, fg='red', activestyle='dotbox')
+box.insert(1,'sample1')
+box.insert(2,'sample2')
+box.insert(3,'sample3')
+box.place(x=10,y=200)
+
+def show():
+    print(box.get(box.curselection()))
+    
+tkt.Button(app, text='show', command=show).place(x=10,y=300)
 
 app.mainloop() 
