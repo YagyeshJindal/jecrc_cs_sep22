@@ -42,10 +42,10 @@ def calc(op):
     print('i will calc')
     result.set(eval(f1.get()+op+f2.get()))
 
-tkt.Button(app, text='+', command=lambda:calc('+') , width=10, font=('Arial',10)).place(x=10,y=150)
-tkt.Button(app, text='-', command=lambda:calc('-') , width=10, font=('Arial',10)).place(x=30,y=150)
-tkt.Button(app, text='*', command=lambda:calc('*') , width=10, font=('Arial',10)).place(x=50,y=150)
-tkt.Button(app, text='/', command=lambda:calc('/') , width=10, font=('Arial',10)).place(x=70,y=150)
+tkt.Button(app, text='+', command=lambda:calc('+') , width=1, font=('Arial',10)).place(x=10,y=150)
+tkt.Button(app, text='-', command=lambda:calc('-') , width=1, font=('Arial',10)).place(x=30,y=150)
+tkt.Button(app, text='*', command=lambda:calc('*') , width=1, font=('Arial',10)).place(x=50,y=150)
+tkt.Button(app, text='/', command=lambda:calc('/') , width=1, font=('Arial',10)).place(x=70,y=150)
 
 box = tkt.Listbox(app, height=5, fg='red', activestyle='dotbox')
 box.insert(1,'sample1')
